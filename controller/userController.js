@@ -9,8 +9,8 @@ async function createUser(req, res) {
         const { nome, email, senha, telefone } = req.body;
 
         // Verificar se o email já existe
-        const existingUser = users.find(u => u.email === email);
-        if (existingUser) {
+        const userExist = users.find(u => u.email === email);
+        if (userExist) {
             return res.status(400).json({ message: 'Email já existente' });
         }
 
